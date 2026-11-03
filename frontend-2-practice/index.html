@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Линия — Онлайн-запись</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Скрытые radio buttons для переключения состояний -->
+  <input type="radio" name="view" id="view-default" class="view-radio" checked>
+  <input type="radio" name="view" id="view-date" class="view-radio">
+  <input type="radio" name="view" id="view-datetime" class="view-radio">
+  <input type="radio" name="view" id="view-busy" class="view-radio">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo">
+        <svg class="header__logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="6" cy="6" r="3"/>
+          <circle cx="6" cy="18" r="3"/>
+          <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+          <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+          <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+        </svg>
+        <span class="header__logo-text">Линия</span>
+      </a>
+      <nav class="header__nav">
+        <a href="#" class="header__nav-link">Услуги</a>
+        <a href="#" class="header__nav-link">Мастера</a>
+        <a href="#" class="header__nav-link">Отзывы</a>
+        <a href="#" class="header__nav-link">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__container">
+
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <a href="#" class="breadcrumbs__link">Главная</a>
+        <span class="breadcrumbs__sep">/</span>
+        <span class="breadcrumbs__current">Онлайн-запись</span>
+      </nav>
+
+      <div class="stepper">
+        <div class="stepper__step stepper__step--done">
+          <span class="stepper__icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="stepper__label">Мастер и услуга</span>
+        </div>
+        <div class="stepper__line"></div>
+        <div class="stepper__step stepper__step--active">
+          <span class="stepper__number">3</span>
+          <span class="stepper__label">Дата и время</span>
+        </div>
+      </div>
+
+      <h1 class="page-title">Когда вам удобно?</h1>
+      <p class="page-subtitle">Выберите дату и свободное время для визита.</p>
+
+      <div class="booking">
+
+        <!-- КАЛЕНДАРЬ -->
+        <div class="calendar-card">
+          <div class="calendar-card__header">
+            <button class="calendar-card__nav calendar-card__nav--prev" aria-label="Предыдущий месяц">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="#2D2640" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <h2 class="calendar-card__month">Октябрь 2026</h2>
+            <button class="calendar-card__nav calendar-card__nav--next" aria-label="Следующий месяц">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="#2D2640" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <div class="calendar-grid">
+            <div class="calendar-grid__weekday">ПН</div>
+            <div class="calendar-grid__weekday">ВТ</div>
+            <div class="calendar-grid__weekday">СР</div>
+            <div class="calendar-grid__weekday">ЧТ</div>
+            <div class="calendar-grid__weekday">ПТ</div>
+            <div class="calendar-grid__weekday">СБ</div>
+            <div class="calendar-grid__weekday">ВС</div>
+
+            <!-- Дни других месяцев (не кликабельны) -->
+            <span class="calendar-grid__day calendar-grid__day--other">28</span>
+            <span class="calendar-grid__day calendar-grid__day--other">29</span>
+            <span class="calendar-grid__day calendar-grid__day--other">30</span>
+
+            <!-- Дни октября — каждый это label для radio -->
+            <!-- 1 октября → состояние "дата выбрана" -->
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">1</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">2</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">3</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">4</label>
+
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">5</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">6</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">7</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">8</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">9</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">10</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">11</label>
+
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">12</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">13</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">14</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">15</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">16</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">17</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">18</label>
+
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">19</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">20</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">21</label>
+
+            <!-- 22 октября → состояние "нет мест" -->
+            <label for="view-busy" class="calendar-grid__day calendar-grid__day--clickable">22</label>
+
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">23</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">24</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">25</label>
+
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">26</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">27</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">28</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">29</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">30</label>
+            <label for="view-date" class="calendar-grid__day calendar-grid__day--clickable">31</label>
+
+            <span class="calendar-grid__day calendar-grid__day--other">1</span>
+          </div>
+        </div>
+
+        <!-- ПАНЕЛЬ ВРЕМЕНИ — 4 состояния -->
+        <div class="time-panel">
+
+          <!-- Состояние 1: по умолчанию -->
+          <div class="time-panel__state time-panel__state--default">
+            <h3 class="time-panel__title">Доступное время</h3>
+            <div class="time-slots">
+              <button class="time-slot">10:00</button>
+              <button class="time-slot">10:30</button>
+              <button class="time-slot">11:00</button>
+              <button class="time-slot">12:00</button>
+              <button class="time-slot">13:30</button>
+              <button class="time-slot">14:00</button>
+              <button class="time-slot">15:00</button>
+              <button class="time-slot">16:30</button>
+              <button class="time-slot">18:00</button>
+            </div>
+          </div>
+
+          <!-- Состояние 2: дата выбрана -->
+          <div class="time-panel__state time-panel__state--date">
+            <h3 class="time-panel__title">Четверг, 1 октября</h3>
+            <p class="time-panel__subtitle">Доступное время</p>
+            <div class="time-slots">
+              <!-- Слоты как labels — клик переключает на состояние 3 -->
+              <label for="view-datetime" class="time-slot time-slot--clickable">10:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">10:30</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">11:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">12:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">13:30</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">14:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">15:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">16:30</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">18:00</label>
+            </div>
+          </div>
+
+          <!-- Состояние 3: дата и время выбраны -->
+          <div class="time-panel__state time-panel__state--datetime">
+            <h3 class="time-panel__title">Четверг, 1 октября</h3>
+            <p class="time-panel__subtitle">Доступное время</p>
+            <div class="time-slots">
+              <label for="view-datetime" class="time-slot time-slot--clickable">10:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">10:30</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">11:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">12:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">13:30</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable time-slot--selected">14:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">15:00</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">16:30</label>
+              <label for="view-datetime" class="time-slot time-slot--clickable">18:00</label>
+            </div>
+            <div class="visit-card">
+              <p class="visit-card__label">Ваш визит</p>
+              <p class="visit-card__service">Анна Смирнова · Укладка</p>
+              <p class="visit-card__info">1 октября, 14:00 · 3 000 ₽</p>
+            </div>
+          </div>
+
+          <!-- Состояние 4: нет мест -->
+          <div class="time-panel__state time-panel__state--busy">
+            <div class="no-availability">
+              <div class="no-availability__icon">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                  <rect x="8" y="12" width="32" height="28" rx="4" stroke="#C9B8E8" stroke-width="2"/>
+                  <line x1="8" y1="20" x2="40" y2="20" stroke="#C9B8E8" stroke-width="2"/>
+                  <line x1="16" y1="8" x2="16" y2="16" stroke="#C9B8E8" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="32" y1="8" x2="32" y2="16" stroke="#C9B8E8" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="20" y1="28" x2="28" y2="36" stroke="#C9B8E8" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="28" y1="28" x2="20" y2="36" stroke="#C9B8E8" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="no-availability__text">На этот день все мастера заняты. Пожалуйста, выберите другую дату</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- КНОПКИ ДЕЙСТВИЙ -->
+      <div class="actions">
+        <!-- Кнопка "Назад" → возвращает к состоянию по умолчанию -->
+        <label for="view-default" class="btn btn--outline btn--clickable">Назад</label>
+        <button class="btn btn--primary btn--disabled" id="continueBtn" disabled>Продолжить</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">Линия</span>
+        <p class="footer__tagline">Салон красоты, где вам рады</p>
+      </div>
+      <div class="footer__contacts">
+        <h4 class="footer__heading">КОНТАКТЫ</h4>
+        <p>Ярославль, ул. Большая Никитская, 22</p>
+        <p>Ежедневно · 10:00–21:00</p>
+      </div>
+      <div class="footer__reach">
+        <h4 class="footer__heading">СВЯЗАТЬСЯ</h4>
+        <p>+7 (495) 123-45-67</p>
+        <p>gmai@liniya.staly</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Line_Salon</span>
+      <a href="#" class="footer__policy">Политика конфиденциальности</a>
+    </div>
+  </footer>
+
+</body>
+<script src="script.js"></script>
+</html>
