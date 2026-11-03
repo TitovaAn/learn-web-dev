@@ -305,16 +305,6 @@ button {
   background-color: var(--color-accent-hover);
 }
 
-.calendar-grid__day--disabled {
-  color: var(--color-border);
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.calendar-grid__day--disabled:hover {
-  background-color: transparent;
-}
-
 /* ===== TIME PANEL ===== */
 .time-panel {
   width: 380px;
@@ -609,15 +599,19 @@ button {
   display: inline-flex;
 }
 
-/* КНОПКА "ПРОДОЛЖИТЬ" */
-.btn--primary.btn--disabled,
-.btn--primary:disabled {
+/* ===== КНОПКА "ПРОДОЛЖИТЬ" АКТИВНА ТОЛЬКО В СОСТОЯНИИ 3 ===== */
+.btn--primary {
   background-color: var(--color-border);
   color: var(--color-text-muted);
   cursor: not-allowed;
 }
 
-.btn--primary.btn--disabled:hover,
-.btn--primary:disabled:hover {
-  background-color: var(--color-border);
+#view-datetime:checked ~ .main .btn--primary {
+  background-color: var(--color-selected);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+#view-datetime:checked ~ .main .btn--primary:hover {
+  background-color: #3a3250;
 }
